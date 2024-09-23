@@ -69,6 +69,8 @@ if [ ! -z "${SERVER_PORT}" ]; then params=( "${params[@]}" -port "${SERVER_PORT}
 
 echo "${params[@]}"
 
+mv /home/steam/Mods /home/steam/core-keeper-dedicated/CoreKeeperServer_Data/StreamingAssets/Mods
+
 DISPLAY=:99 LD_LIBRARY_PATH="$LD_LIBRARY_PATH:../Steamworks SDK Redist/linux64/" ./CoreKeeperServer "${params[@]}"&
 
 ckpid=$!
